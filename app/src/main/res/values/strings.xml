@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Star Wars Kamino app</string>
+    <string name="title_activity_main">MainActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="kamino">Kamino</string>
+    <string name="name">Name</string>
+    <string name="rotation_period">Rotation period</string>
+    <string name="orbital_period">Orbital period</string>
+    <string name="diameter">Diameter</string>
+    <string name="climate">Climate</string>
+    <string name="gravity">Gravity</string>
+    <string name="terrain">Terrain</string>
+    <string name="surface_water">Surface watter</string>
+    <string name="population">Population</string>
+    <string name="date_created">Date created</string>
+    <string name="time_created">Time created</string>
+    <string name="date_edited">Date edited</string>
+    <string name="time_edited">Time edited</string>
+    <string name="likes">Likes</string>
+    <string name="title_activity_residents">Residents</string>
+    <string name="residents_of">"Residents of "</string>
+    <string name="title_activity_resident_details">Resident Details</string>
+    <string name="height">Height</string>
+    <string name="mass">Mass</string>
+    <string name="hairColor">Hair color</string>
+    <string name="skinColor">Skin color</string>
+    <string name="eyeColor">Eye color</string>
+    <string name="birthYear">Birth year</string>
+    <string name="gender">Gender</string>
+    <string name="homeworldName">Homeworld</string>
+</resources>
