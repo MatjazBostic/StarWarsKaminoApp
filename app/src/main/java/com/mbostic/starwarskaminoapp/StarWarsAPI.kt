@@ -17,20 +17,23 @@ interface StarWarsAPI {
 
         private const val BASE_URL = "https://private-anon-4004315e79-starwars2.apiary-mock.com"
 
+        /** Builds and returns the StarWarsAPI */
         fun getAPI(): StarWarsAPI {
             return Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).client(OkHttpClient.Builder().build())
                 .build().create(StarWarsAPI::class.java)
         }
     }
 
+    /** Fetches the planet with the given [id] */
     @GET("/planets/{id}")
-    fun getPlanet(@Path("id") id: Int) : Call<Planet>
+    fun getPlanet(@Path("id") id: Int): Call<Planet>
 
-
-    @POST("/planets/{id}/like")
-    fun likePlanet(@Path("id") planetId: Int) : Call<LikeResponse>
-
+    /** Fetches the resident with the given [residentId] */
     @GET("residents/{id}")
     fun getResident(@Path("id") residentId: Int): Call<Resident>
+
+    /** Fetches the number of likes for the planet with the given [planetId] */
+    @POST("/planets/{id}/like")
+    fun likePlanet(@Path("id") planetId: Int): Call<LikeResponse>
 
 }

@@ -35,5 +35,4 @@ class Planet {
     var imageUrl: String? = null
 
     var likes: Int? = null
-
 }

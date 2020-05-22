@@ -9,11 +9,12 @@ import kotlinx.android.synthetic.main.activity_residents.*
 
 class ResidentsActivity : AppCompatActivity() {
 
-    companion object{
+    companion object {
         const val RESIDENTS_EXTRA_KEY = "residents"
         const val PLANET_NAME_EXTRA_KEY = "planetName"
     }
 
+    /** Initializes recyclerView*/
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_residents)

@@ -72,12 +72,12 @@ class PlanetDetailsActivity : AppCompatActivity(), PlanetDetailsPresenter.View {
     /** Sets the new [num] of likes to the likesTextView. If [showToast] is true, it displays a Toast with the amount of likes */
     override fun setLikes(num: Int, likedByUser: Boolean, showToast: Boolean) {
         likesTextView.text = num.toString()
-        if(likedByUser){
+        if (likedByUser) {
             likeFab.setImageResource(R.drawable.ic_thumb_up_white_24dp)
         } else {
             likeFab.setImageResource(R.drawable.ic_thumb_up_outline_white_24px)
         }
-        if(showToast) {
+        if (showToast) {
             Toast.makeText(this, getString(R.string.new_amount_of_likes) + num, Toast.LENGTH_LONG).show()
         }
     }
@@ -103,20 +103,16 @@ class PlanetDetailsActivity : AppCompatActivity(), PlanetDetailsPresenter.View {
         HelperFunctions.showProperty(layoutInflater, insertPoint, getString(R.string.surface_water), planet.surfaceWater.toString())
         HelperFunctions.showProperty(layoutInflater, insertPoint, getString(R.string.population), planet.population.toString())
 
-        val dateCreatedStr = HelperFunctions.formatDateFromDateString("yyyy-MM-dd'T'HH:mm:ss.FFFFFF'Z'",
-            "dd.MM.yyyy", planet.created)
+        val dateCreatedStr = HelperFunctions.formatDateFromDateString("yyyy-MM-dd'T'HH:mm:ss.FFFFFF'Z'", "dd.MM.yyyy", planet.created)
         HelperFunctions.showProperty(layoutInflater, insertPoint, getString(R.string.date_created), dateCreatedStr)
 
-        val timeCreatedStr = HelperFunctions.formatDateFromDateString("yyyy-MM-dd'T'HH:mm:ss.FFFFFF'Z'",
-            "HH:mm:ss", planet.created)
+        val timeCreatedStr = HelperFunctions.formatDateFromDateString("yyyy-MM-dd'T'HH:mm:ss.FFFFFF'Z'", "HH:mm:ss", planet.created)
         HelperFunctions.showProperty(layoutInflater, insertPoint, getString(R.string.time_created), timeCreatedStr)
 
-        val dateEditedStr = HelperFunctions.formatDateFromDateString("yyyy-MM-dd'T'HH:mm:ss.FFFFFF'Z'",
-            "dd.MM.yyyy", planet.edited)
+        val dateEditedStr = HelperFunctions.formatDateFromDateString("yyyy-MM-dd'T'HH:mm:ss.FFFFFF'Z'", "dd.MM.yyyy", planet.edited)
         HelperFunctions.showProperty(layoutInflater, insertPoint, getString(R.string.date_edited), dateEditedStr)
 
-        val timeEditedStr = HelperFunctions.formatDateFromDateString("yyyy-MM-dd'T'HH:mm:ss.FFFFFF'Z'",
-            "HH:mm:ss", planet.edited)
+        val timeEditedStr = HelperFunctions.formatDateFromDateString("yyyy-MM-dd'T'HH:mm:ss.FFFFFF'Z'", "HH:mm:ss", planet.edited)
         HelperFunctions.showProperty(layoutInflater, insertPoint, getString(R.string.time_edited), timeEditedStr)
 
 

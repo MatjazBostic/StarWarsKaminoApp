@@ -35,6 +35,7 @@ class ResidentDetailsActivity : AppCompatActivity(), ResidentDetailsPresenter.Vi
         presenter = ResidentDetailsPresenter(this, intent.getIntExtra(RESIDENT_ID_EXTRA, 0))
     }
 
+    /** Sets the properties of the given [resident] to the UI */
     override fun setData(resident: Resident) {
 
         residentImageView.let {
@@ -51,26 +52,23 @@ class ResidentDetailsActivity : AppCompatActivity(), ResidentDetailsPresenter.Vi
         HelperFunctions.showProperty(layoutInflater, propertyInsertPoint, getString(R.string.birthYear), resident.birthYear)
         HelperFunctions.showProperty(layoutInflater, propertyInsertPoint, getString(R.string.gender), resident.gender)
 
-        val dateCreatedStr = HelperFunctions.formatDateFromDateString("yyyy-MM-dd'T'HH:mm:ss.FFFFFF'Z'",
-            "dd.MM.yyyy", resident.created)
+        val dateCreatedStr = HelperFunctions.formatDateFromDateString("yyyy-MM-dd'T'HH:mm:ss.FFFFFF'Z'", "dd.MM.yyyy", resident.created)
         HelperFunctions.showProperty(layoutInflater, propertyInsertPoint, getString(R.string.date_created), dateCreatedStr)
 
-        val timeCreatedStr = HelperFunctions.formatDateFromDateString("yyyy-MM-dd'T'HH:mm:ss.FFFFFF'Z'",
-            "HH:mm:ss", resident.created)
+        val timeCreatedStr = HelperFunctions.formatDateFromDateString("yyyy-MM-dd'T'HH:mm:ss.FFFFFF'Z'", "HH:mm:ss", resident.created)
         HelperFunctions.showProperty(layoutInflater, propertyInsertPoint, getString(R.string.time_created), timeCreatedStr)
 
-        val dateEditedStr = HelperFunctions.formatDateFromDateString("yyyy-MM-dd'T'HH:mm:ss.FFFFFF'Z'",
-            "dd.MM.yyyy", resident.edited)
+        val dateEditedStr = HelperFunctions.formatDateFromDateString("yyyy-MM-dd'T'HH:mm:ss.FFFFFF'Z'", "dd.MM.yyyy", resident.edited)
         HelperFunctions.showProperty(layoutInflater, propertyInsertPoint, getString(R.string.date_edited), dateEditedStr)
 
-        val timeEditedStr = HelperFunctions.formatDateFromDateString("yyyy-MM-dd'T'HH:mm:ss.FFFFFF'Z'",
-            "HH:mm:ss", resident.edited)
+        val timeEditedStr = HelperFunctions.formatDateFromDateString("yyyy-MM-dd'T'HH:mm:ss.FFFFFF'Z'", "HH:mm:ss", resident.edited)
         HelperFunctions.showProperty(layoutInflater, propertyInsertPoint, getString(R.string.time_edited), timeEditedStr)
 
         findViewById<ProgressBar>(R.id.progressBar).visibility = View.GONE
 
     }
 
+    /** Sets the name of the home world */
     override fun setHomeWorldName(name: String) {
         HelperFunctions.showProperty(layoutInflater, propertyInsertPoint, getString(R.string.homeworldName), name)
     }

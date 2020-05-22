@@ -17,20 +17,21 @@ class ResidentDetailsPresenter(private var view: View, residentId: Int) {
 
     private var starWarsAPI: StarWarsAPI = StarWarsAPI.getAPI()
 
+    /** Fetches resident details */
     init {
         starWarsAPI.getResident(residentId).enqueue(object : Callback<Resident> {
             override fun onResponse(call: Call<Resident>, response: Response<Resident>) {
                 if (response.isSuccessful) {
-                    view.setData(response.body())
+                    response.body()?.let { view.setData(it) }
 
-                    val homeWorldUrl = response.body().homeWorld
+                    val homeWorldUrl = response.body()?.homeWorld
                     val homeWorldId = homeWorldUrl?.substring(homeWorldUrl.lastIndexOf("/") + 1, homeWorldUrl.length) ?: return
 
                     // get homeworld of the resident
                     starWarsAPI.getPlanet(homeWorldId.toInt()).enqueue(object : Callback<Planet> {
                         override fun onResponse(call: Call<Planet>, response: Response<Planet>) {
                             if (response.isSuccessful) {
-                                response.body().name?.let { view.setHomeWorldName(it) }
+                                response.body()?.name?.let { view.setHomeWorldName(it) }
                             } else {
                                 retry(call)
                             }

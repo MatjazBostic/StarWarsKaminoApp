@@ -6,5 +6,6 @@ class LikeResponse {
     @SerializedName("planet_id")
     var planetId: Int? = null
 
-    var likes: Int? = null
+    @SerializedName("likes ")
+    var likesNum: Int? = null
 }

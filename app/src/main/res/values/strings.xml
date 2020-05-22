@@ -35,4 +35,5 @@
     <string name="birthYear">Birth year</string>
     <string name="gender">Gender</string>
     <string name="homeworldName">Homeworld</string>
+    <string name="new_amount_of_likes">New amount of likes is:  </string>
 </resources>

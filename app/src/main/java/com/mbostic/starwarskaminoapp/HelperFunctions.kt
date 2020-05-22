@@ -14,14 +14,16 @@ class HelperFunctions {
         const val CONNECTION_RETRY_DELAY_MS = 1000L
         const val DEFAULT_PLANET_ID = 10
 
+        /** If [url] starts with "http", it is changed to https. Returns url with https */
         fun forceHttpsInUrl(url: String?): String {
-            if(url != null && url.substring(0, 5) == "http:"){
+            if (url != null && url.substring(0, 5) == "http:") {
                 return "https" + url.substring(4)
             }
             return url.toString()
         }
 
-        fun showProperty(layoutInflater: LayoutInflater, insertPoint: ViewGroup, name: String, value: String?){
+        /** Inflates the layout of a property with [layoutInflater] and adds it to [insertPoint]. */
+        fun showProperty(layoutInflater: LayoutInflater, insertPoint: ViewGroup, name: String, value: String?) {
             layoutInflater.inflate(R.layout.planet_information_row, null).let {
                 it.findViewById<TextView>(R.id.propertyName).text = name + ':'
                 it.findViewById<TextView>(R.id.propertyValue).text = value
@@ -39,16 +41,11 @@ class HelperFunctions {
          * @throws ParseException
          */
         @Throws(ParseException::class)
-        fun formatDateFromDateString(
-            inputDateFormat: String?, outputDateFormat: String?,
-            inputDate: String?
-        ): String? {
+        fun formatDateFromDateString(inputDateFormat: String?, outputDateFormat: String?, inputDate: String?): String? {
             val mParsedDate: Date
             val mOutputDateString: String
-            val mInputDateFormat =
-                SimpleDateFormat(inputDateFormat, Locale.getDefault())
-            val mOutputDateFormat =
-                SimpleDateFormat(outputDateFormat, Locale.getDefault())
+            val mInputDateFormat = SimpleDateFormat(inputDateFormat, Locale.getDefault())
+            val mOutputDateFormat = SimpleDateFormat(outputDateFormat, Locale.getDefault())
             mParsedDate = mInputDateFormat.parse(inputDate)
             mOutputDateString = mOutputDateFormat.format(mParsedDate)
             return mOutputDateString

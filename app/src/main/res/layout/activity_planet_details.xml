@@ -30,13 +30,14 @@
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/likeFab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_marginEnd="@dimen/fab_margin"
         android:layout_marginBottom="90dp"
         android:onClick="onClickLikeFab"
-        app:srcCompat="@drawable/ic_thumb_up_white_24dp" />
+        app:srcCompat="@drawable/ic_thumb_up_outline_white_24px" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
